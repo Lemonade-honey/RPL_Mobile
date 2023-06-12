@@ -17,8 +17,9 @@ const Home = () => {
             <Stack.Screen 
                 options={{
                     headerTitle: "Cafe In Aja",
+                    headerTitleAlign: 'left',
                     headerRight: () => (
-                        <ScreenHeaderBtn />
+                        <ScreenHeaderBtn icon={"clipboard"}/>
                     )
                 }}
             />

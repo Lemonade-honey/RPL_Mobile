@@ -1,10 +1,12 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 
-const ScreenHeaderBtn = ({ handlePress }) => {
+import { Entypo } from '@expo/vector-icons';
+
+const ScreenHeaderBtn = ({ icon, handlePress }) => {
     return(
         <TouchableOpacity onPress={handlePress}>
-            <Text>Anjass</Text>
+            <Entypo name={icon} size={20} color="black" />
         </TouchableOpacity>
     );
 }
