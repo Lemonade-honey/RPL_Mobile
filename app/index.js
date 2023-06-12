@@ -1,11 +1,32 @@
 import { useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView, ScrollView } from "react-native";
+import { Stack, useRouter } from "expo-router";
+
+// import style
+import { COLORS, SIZES } from "../constant";
 
 const Home = () => {
+
+    // define router
+    const router = useRouter();
+
     return(
-        <View>
-            <Text>Home View</Text>
-        </View>
+        <SafeAreaView style={{flex: 1, backgroundColor: COLORS.lightWhite}}>
+            {/* Header Nav */}
+            <Stack.Screen 
+                options={{
+                    headerTitle: "Cafe In Aja"
+                }}
+            />
+
+            {/* BODY */}
+            <ScrollView>
+                <View style={{flex: 1, padding: SIZES.medium}}>
+                    <Text>Anjas</Text>
+                </View>
+            </ScrollView>
+
+        </SafeAreaView>
     );
 }
 
