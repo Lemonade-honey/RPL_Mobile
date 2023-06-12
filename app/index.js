@@ -4,6 +4,7 @@ import { Stack, useRouter } from "expo-router";
 
 // import style
 import { COLORS, SIZES } from "../constant";
+import { Welcome } from "../components";
 
 const Home = () => {
 
@@ -22,7 +23,7 @@ const Home = () => {
             {/* BODY */}
             <ScrollView>
                 <View style={{flex: 1, padding: SIZES.medium}}>
-                    <Text>Anjas</Text>
+                    <Welcome />
                 </View>
             </ScrollView>
 
