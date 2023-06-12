@@ -4,7 +4,7 @@ import { Stack, useRouter } from "expo-router";
 
 // import style
 import { COLORS, SIZES } from "../constant";
-import { Welcome } from "../components";
+import { Welcome, ScreenHeaderBtn } from "../components";
 
 const Home = () => {
 
@@ -16,7 +16,10 @@ const Home = () => {
             {/* Header Nav */}
             <Stack.Screen 
                 options={{
-                    headerTitle: "Cafe In Aja"
+                    headerTitle: "Cafe In Aja",
+                    headerRight: () => (
+                        <ScreenHeaderBtn />
+                    )
                 }}
             />
 
