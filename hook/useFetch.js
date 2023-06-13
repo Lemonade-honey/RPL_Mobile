@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useFetch = ({endpoint}) => {
+const useFetch = (endpoint, param) => {
 
     const [data, setData] = useState([]);
     // default loading
@@ -11,7 +11,7 @@ const useFetch = ({endpoint}) => {
 
     const option = {
         method: 'GET',
-        url: `https://rplcoffe.000webhostapp.com/menu`,
+        url: `https://rplcoffe.000webhostapp.com/${endpoint}/${param}`,
     }
 
     // fetch data

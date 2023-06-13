@@ -13,7 +13,7 @@ const Menu = () => {
     const router = useRouter();
 
     // fetch data
-    const {data, isLoading, error} = useFetch('menu');
+    const {data, isLoading, error} = useFetch("menu", '0');
 
 
     return(
@@ -24,7 +24,7 @@ const Menu = () => {
                 {isLoading ? (
                     <ActivityIndicator size="large" color={COLORS.primary} />
                 ) : error ? (
-                    {/* <Text>Something went wrong</Text> */}
+                    <Text>Something went wrong</Text>
                 ) : (
                     data?.map((item) => (
                         <MenuCard key={item.id} target={'makanan'} type={item.type} nama={item.nama} harga={item.harga} img={`https://rplcoffe.000webhostapp.com/img/${item.img}`} handleNavigate = {() => router.push(`/menu-detail/${item.id}`)}/>
@@ -38,10 +38,10 @@ const Menu = () => {
                 {isLoading ? (
                     <ActivityIndicator size="large" color={COLORS.primary} />
                 ) : error ? (
-                    {/* <Text>Something went wrong</Text> */}
+                    <Text>Something went wrong</Text>
                 ) : (
                     data?.map((item) => (
-                        <MenuCard key={item.id} target={'minuman'} type={item.type} nama={item.nama} harga={item.harga} img={`https://rplcoffe.000webhostapp.com/img/${item.img}`}/>
+                        <MenuCard key={item.id} target={'minuman'} type={item.type} nama={item.nama} harga={item.harga} img={`https://rplcoffe.000webhostapp.com/img/${item.img}`} handleNavigate = {() => router.push(`/menu-detail/${item.id}`)}/>
                     ))
                 )}
             </View>
