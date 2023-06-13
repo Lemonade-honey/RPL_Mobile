@@ -2,10 +2,10 @@ import React from "react";
 import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
 
 
-const MenuCard = ({target, type, nama, img, harga}) => {
+const MenuCard = ({target, type, nama, img, harga, handleNavigate}) => {
     if(target == type){
         return(
-            <TouchableOpacity style={styles.container}>
+            <TouchableOpacity style={styles.container} onPress={handleNavigate}>
                 <Image source={{uri: img}} style={{flex: 1,width: null, height: null, borderTopRightRadius: 10, borderTopLeftRadius: 10}} resizeMode="center"/>
                 <View style={styles.subContainer}>
                     <Text>{nama}</Text>

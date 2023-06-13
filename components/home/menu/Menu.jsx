@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, ActivityIndicator } from "react-native";
+import { useRouter } from "expo-router";
 
 import styles from "./menu.style";
 
@@ -8,6 +9,8 @@ import useFetch from "../../../hook/useFetch";
 import { COLORS } from "../../../constant";
 
 const Menu = () => {
+
+    const router = useRouter();
 
     // fetch data
     const {data, isLoading, error} = useFetch('menu');
@@ -24,7 +27,7 @@ const Menu = () => {
                     {/* <Text>Something went wrong</Text> */}
                 ) : (
                     data?.map((item) => (
-                        <MenuCard key={item.id} target={'makanan'} type={item.type} nama={item.nama} harga={item.harga} img={`https://rplcoffe.000webhostapp.com/img/${item.img}`}/>
+                        <MenuCard key={item.id} target={'makanan'} type={item.type} nama={item.nama} harga={item.harga} img={`https://rplcoffe.000webhostapp.com/img/${item.img}`} handleNavigate = {() => router.push(`/menu-detail/${item.id}`)}/>
                     ))
                 )}
             </View>
